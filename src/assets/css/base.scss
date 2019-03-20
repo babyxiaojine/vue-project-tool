@@ -1,0 +1,144 @@
+$blue: #4196F7;
+$green: #15BC83;
+$red: #E8380D;
+$red2: #FF5F5F;
+$orange: #FF943E;
+$fff: #ffffff;
+$gray: #999999;
+.green{color:$green!important;}
+.red{color:$red!important;}
+.gray{color:$gray!important;}
+/*
+* 字体图标路径
+ */
+$iconUrl: '/static/iconFont';
+
+/*
+* 显示省略号
+ */
+@mixin ellipsis() {
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*
+* 禁用长按文字选择
+ */
+@mixin selectNone() {
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+@mixin trans($time:.3s){
+  transition:all $time; -webkit-transition:all $time;
+}
+@mixin flexbox($jc:center,$ai:center,$ac:center,$fd:row,$fw:nowrap){
+  display: flex;
+  justify-content:$jc;
+  align-items:$ai;
+  align-content:$ac;
+  flex-direction:$fd;
+  flex-wrap:$fw;
+}
+// 多行省略号
+@mixin clamp($line:2){
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical; 
+}
+/*
+*px2rem计算
+*/
+$pixelBase : 16;//默认字体
+
+/*
+* 是否转换
+ */
+$rem-only: true;
+
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+
+@function p2r($values){
+
+  $list: ();
+
+  @each $value in $values {
+
+    @if (type-of($value) == "number") and ($value != 0) {
+
+      $unit : unit($value);
+      $val  : parseInt($value);
+
+      @if ($rem-only) and ($unit == 'px') {
+        $list: append($list, ($val / $pixelBase) + rem);
+      }
+
+      @else if($unit == 'px') or ($unit == 'rem'){
+        $list: append($list, $value);
+      }
+
+      @else if($unit == '%'){
+        $list: append($list, $value);
+      }
+
+      @else {
+        @warn 'There is no unit conversion for "#{$unit}"';
+      }
+
+    }@else {
+      $list: append($list, $value);
+    }
+
+  }
+
+  @return $list();
+
+}
+
+/*
+* 宽高
+ */
+@mixin wh($width, $height){
+  width: p2r($width);
+  height: p2r($height);
+}
+
+/*
+* 定位上下左右居中
+ */
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*
+* 定位上下居中
+ */
+@mixin tbc {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*
+* 定位左右居中
+ */
+@mixin lrc {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+$z14:p2r(14px);
+$z16:p2r(16px);
+$z18:p2r(18px);

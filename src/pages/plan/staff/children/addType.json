@@ -1,0 +1,70 @@
+{
+  "objPoint": {
+    "code": "",
+    "currentMonthObjStatus": "",
+    "devName": "",
+    "id": "",
+    "objName": "",
+    "objStatus": "",
+    "otherId": "",
+    "predictDecidedTime": "",
+    "predictOpenTime": "",
+    "shopDecidedFlag": "",
+    "shopDecidedType": "",
+    "shopOpenFlag": ""
+  },
+  "newShop": {
+    "code": "",
+    "devName": "",
+    "id": "",
+    "otherId": "",
+    "predictOpenTime": "",
+    "projectProgress": "",
+    "shopName": ""
+  },
+  "extendShop": {
+    "code": "",
+    "devName": "",
+    "id": "",
+    "otherId": "",
+    "predictOpenTime": "",
+    "projectProgress": "",
+    "shopName": ""
+  },
+  "reNewShop": {
+    "code": "",
+    "contractExpirationTime": "",
+    "devName": "",
+    "growthRate": "",
+    "id": "",
+    "oldRent": "",
+    "otherId": "",
+    "predictRenewTime": "",
+    "rent": "",
+    "shopName": ""
+  },
+  "closeShop": {
+    "budgetFlag": "",
+    "closeReason": "",
+    "code": "",
+    "contractExpirationTime": "",
+    "devName": "",
+    "id": "",
+    "otherId": "",
+    "predictCloseTime": "",
+    "shopName": "",
+    "shopNature": ""
+  },
+  "brand": {
+    "brandName": "",
+    "brandStatus": "",
+    "dockerName": "",
+    "dockerPhone": "",
+    "id": "",
+    "otherId": "",
+    "predictVisitTime": "",
+    "projectName": "",
+    "responsible": "",
+    "visitMatters": ""
+  }
+}
